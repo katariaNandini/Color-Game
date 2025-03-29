@@ -1,20 +1,119 @@
-.matrix-container {
+.game-container {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  width: fit-content;
+  align-items: center;
   padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #e1e1e1;
+}
+
+h1 {
+  color: #e1e1e1;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.instructions {
+  color: #b8b8b8;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.progress-info {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #e1e1e1;
+  font-weight: 500;
+}
+
+.matrix-container {
+  background: #2c3e50;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .matrix-row {
   display: flex;
-  gap: 5px;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.matrix-row:last-child {
+  margin-bottom: 0;
 }
 
 .matrix-box {
   width: 80px;
   height: 80px;
-  border: 2px solid #333;
+  border: 2px solid #4a6785;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #1a2634;
+}
+
+.matrix-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+  border-color: #3498db;
+}
+
+.matrix-box.clicked {
+  background-color: #27ae60;
+  border-color: #2ecc71;
+}
+
+.matrix-box.orange {
+  background-color: #d35400;
+  border-color: #e67e22;
+}
+
+.click-number {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.reset-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.reset-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.reset-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .matrix-box {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .click-number {
+    font-size: 1.2rem;
+  }
 } 
